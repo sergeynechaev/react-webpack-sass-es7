@@ -21,21 +21,19 @@ module.exports = {
             {
                 test: /\.js(x?)$/,
                 loader: 'babel',
-                exclude: /node_modules/,
-                query: {
-                    optional: ["es7.decorators", "es7.classProperties"]
-                }
+                exclude: /node_modules/
             }
         ]
     },
     resolve: {
-        extensions: ['', '.js', 'jsx', '.json', '.sass', '.scss', '.css'] 
+        extensions: ['', '.js', 'jsx', '.json', '.sass', '.scss', '.css']
     },
     devServer: {
         contentBase: path.join(__dirname, 'build'),
         //noInfo: true,         // suppress webpack output into console
         hot: true,
-        inline: true
+        inline: true,
+        historyApiFallback: true
     }
 };
 
