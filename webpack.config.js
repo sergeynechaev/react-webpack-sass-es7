@@ -2,38 +2,40 @@ var path = require('path');
 
 module.exports = {
     // context: path.join(__dirname, 'src'),
-    entry: [
-        "./src/App/index.js"
-    ],
+    entry: {
+        javascript: "./src/scripts/index.js",
+        html: "./src/index.html"
+    },
     output: {
         path: path.join(__dirname, 'build'),
         filename: "assets/bundle.js"
     },
     module: {
         loaders: [
-            { test: /\.html$/, loader: "raw" },
-            { test: /\.scss$/, loader: "style!css!sass" },
             {
-                test: /\.js(x?)$/,
-                loader: 'react-hot',
-                exclude: /node_modules/
+                test: /\.html$/,
+                loader: "file?name=[name].[ext]"
+            },
+            {
+                test: /\.scss$/,
+                loader: "style!css!sass"
             },
             {
                 test: /\.js(x?)$/,
-                loader: 'babel',
-                exclude: /node_modules/
+                exclude: /node_modules/,
+                loaders: ["react-hot", "babel"]
             }
         ]
     },
     resolve: {
-        extensions: ['', '.js', 'jsx', '.json', '.sass', '.scss', '.css']
+        extensions: ['', '.js', 'jsx', '.sass', '.scss', '.css']
     },
     devServer: {
         contentBase: path.join(__dirname, 'build'),
         //noInfo: true,         // suppress webpack output into console
         hot: true,
         inline: true,
-        historyApiFallback: true
+        historyApiFallback: false
     }
 };
 

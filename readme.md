@@ -3,11 +3,11 @@
 
 	This is my own starter template for ReactJS dev with:
 
-* react 0.14
-* react-router 2.0
+* react 0.14.8
+* react-router 2.0.1
+* babel 6.4.0 with ES7 features
 * webpack + hot loader
 * sass
-* babel transpiler to support ES7 features
 
 ## Usage
 
