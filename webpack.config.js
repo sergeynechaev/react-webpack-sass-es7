@@ -35,7 +35,7 @@ module.exports = {
         //noInfo: true,         // suppress webpack output into console
         hot: true,
         inline: true,
-        historyApiFallback: false
+        historyApiFallback: true
     }
 };
 
