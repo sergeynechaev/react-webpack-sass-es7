@@ -1,17 +1,23 @@
 import React from 'react';
 import {Route, IndexRoute, Redirect} from 'react-router';
 
-import {App} from './App';
-import {Dashboard} from './Dashboard';
-import {Page} from './Page/Page';
+// core pages
+import {App} from './app';
+import {MainPage} from './components/mainPage';
+import {Dashboard} from './components/dashboard';
+import {NotFound} from './components/notFound';
+
+// sections
+import {AppPage} from './components/section/appPage';
+import {AnotherPage} from './components/anotherSection/anotherPage';
 
 export const AppRoutes = (
     <Route path="/" component={App}>
-        <IndexRoute component={Dashboard}/>
+        <IndexRoute component={MainPage}/>
         <Route path="dashboard" component={Dashboard}>
-            <Route path="page" component={Page}/>
+            <Route path="page" component={AppPage}/>
+            <Route path="another-page" component={AnotherPage}/>
         </Route>
-        <Route path="*" component={Page}/>
+        <Route path="*" component={NotFound}/>
     </Route>
 );
-

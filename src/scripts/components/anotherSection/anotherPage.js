@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class Page extends React.Component {
+export class AnotherPage extends React.Component {
 
     constructor( props ) {
         super( props );
@@ -26,7 +26,8 @@ export class Page extends React.Component {
     render =()=> {
         return (
             <div>
-                App Page
+                <div>Another App Page.</div>
+                <div>Another string.</div>
             </div>
         )
     }

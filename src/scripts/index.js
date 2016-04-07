@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { hashHistory, browserHistory, Router, Route  } from 'react-router'
 
-import {AppRoutes} from './AppRoutes';
+import {AppRoutes} from './appRoutes';
 
-// Styles
+// styles
 require('../styles/index.scss');
 
 ReactDOM.render((
