@@ -3,7 +3,7 @@
 
 	This is my own starter template for ReactJS dev with:
 
-* react 0.14.8
+* react 15.0.0
 * react-router 2.0.1
 * babel 6.4.0 with ES7 features
 * webpack + hot loader
