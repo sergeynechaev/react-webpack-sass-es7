@@ -27,7 +27,9 @@ export class AnotherPage extends React.Component {
         return (
             <div>
                 <div>Another App Page.</div>
-                <div>Another string.</div>
+                <div>
+                    <img src="/static/img/catdeer.jpg" />
+                </div>
             </div>
         )
     }

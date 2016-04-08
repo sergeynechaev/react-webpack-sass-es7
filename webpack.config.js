@@ -1,4 +1,5 @@
 var path = require('path');
+var copyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     // context: path.join(__dirname, 'src'),
@@ -24,6 +25,10 @@ module.exports = {
                 test: /\.js(x?)$/,
                 exclude: /node_modules/,
                 loaders: ["react-hot", "babel"]
+            },
+            {
+                test: /\.(mp3|wave)$/,
+                loader:'file'
             }
         ]
     },
@@ -36,6 +41,12 @@ module.exports = {
         hot: true,
         inline: true,
         historyApiFallback: true
-    }
+    },
+    plugins: [
+        new copyWebpackPlugin([
+            { from: './src/static', to: 'static' },
+            { from: './src/vendor', to: 'assets/vendor' }
+        ])
+    ]
 };
 
